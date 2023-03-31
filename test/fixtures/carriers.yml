@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  mc_number: 1
+  dot_number: 1
+  address: MyString
+  main_contact: MyString
+  contact_number: 1
+
+two:
+  name: MyString
+  mc_number: 1
+  dot_number: 1
+  address: MyString
+  main_contact: MyString
+  contact_number: 1

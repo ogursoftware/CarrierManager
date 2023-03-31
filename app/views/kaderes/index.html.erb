@@ -1,0 +1,53 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Kaderes</h1>
+
+<%= search_form_for @q do|f| %>
+<%= f.label "Search Kadere" %>
+
+<%= f.search_field :name_or_email_cont %>
+
+<%= f.submit  %>
+<br>
+<br>
+
+<% end %> 
+
+<table class="table-dark table table-striped table-bordered table-hover">
+  <thead class ="thead-dark">
+     <tr>
+      <th>Name</th>
+      <th>Phone</th>
+      <th>Email</th>
+      <th>Truck Number</th>
+      <th>Trailer Number</th>
+      <th>Carrier Company </th>
+      <th colspan="2"></th>
+    </tr>
+  
+  </thead>
+  <tbody>
+    <% @kaderes.each do |kadere| %>
+    <tr>
+    <td><%=kadere.name %></td>
+    <td><%=kadere.phone %></td>
+    <td><%=kadere.email %></td>
+    <td><%=kadere.truck_number %></td>
+    <td><%=kadere.trailer_number%></td>
+    <td><%=kadere&.carrier&.name %></td>
+    <td> <%= link_to "Show this Kadere", kadere %> </td>
+
+   </tr>
+  <% end %>
+
+  </tbody>
+</table>
+
+
+
+
+<br>
+
+<%= link_to "New kadere", new_kadere_path, class:"btn btn-dark" %>
+<p>
+ 

@@ -1,0 +1,32 @@
+<div id="<%= dom_id kadere %>">
+  <p>
+    <strong>Name:</strong>
+    <%= kadere.name %>
+  </p>
+
+  <p>
+    <strong>Phone:</strong>
+    <%= kadere.phone %>
+  </p>
+
+  <p>
+    <strong>Email:</strong>
+    <%= kadere.email %>
+  </p>
+
+  <p>
+    <strong>Truck number:</strong>
+    <%= kadere.truck_number %>
+  </p>
+
+  <p>
+    <strong>Trailer number:</strong>
+    <%= kadere.trailer_number %>
+  </p>
+
+  <p>
+    <strong>Carrier company:</strong>
+    <%= kadere.carrier.name if kadere.carrier%>
+  </p>
+
+</div>

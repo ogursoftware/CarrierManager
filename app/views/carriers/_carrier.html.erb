@@ -1,0 +1,47 @@
+<div id="<%= dom_id carrier %>">
+
+
+<div class="jumbotron">
+<h1> <%= carrier.name %>   </h1>
+<p class="lead">
+
+      
+      <%= carrier.address %>
+         
+
+
+</p>
+<hr class ="my-4">
+<p>
+
+
+
+</p>
+</div>
+  
+
+  <p>
+    <strong>Mc number:</strong>
+    <%= carrier.mc_number %>
+  </p>
+
+  <p>
+    <strong>Dot number:</strong>
+    <%= carrier.dot_number %>
+  </p>
+
+    <strong>Main contact:</strong>
+    <%= carrier.main_contact %>
+  </p>
+
+  <p>
+    <strong>Contact number:</strong>
+    <%= carrier.contact_number %>
+  </p>  
+
+
+  <%= link_to "Edit", edit_carrier_path(@carrier),class:"btn btn-secondary" %> 
+  <p>
+  <%= button_to "Delete this carrier", @carrier, method: :delete,class:"btn btn-secondary" %>
+  <p>
+</div>

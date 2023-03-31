@@ -1,0 +1,12 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @load %>
+<%= link_to "Download Rate Confirmation", @load.rate_confirmation.url, download: true %>
+<div>
+  <%= link_to "Edit this Load", edit_load_path(@load), class:"btn btn-secondary" %> 
+  <p>
+  <%= link_to "Back to Loads", loads_path , class:"btn btn-secondary" %>
+  <p>
+
+  <%= button_to "Delete this Load", @load, method: :delete , class:"btn btn-secondary" %>
+</div>

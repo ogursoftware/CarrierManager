@@ -1,0 +1,49 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark text-uppercase fixed-top" id="mainNav">
+            <div class="container">
+                
+                        
+                        
+                
+                <a class="navbar-brand" href="#page-top">My App</a>
+
+                   <li> <img class="masthead-avatar mb-5" src="assets/img/logo_only.png" alighn="center" width="32" height="32" alt="Logo" /></li>
+
+
+                      <li><a href="http://127.0.0.1:3000/home/index2"> index2</li> 
+
+
+                
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item mx-0 mx-lg-1"> <%=link_to "Home", root_path,class:"nav-link py-3 px-0 px-lg-3 rounded "%></li>                        
+                        
+                        <%if user_signed_in?%>
+                            <li class="nav-item mx-0 mx-lg-1"> <%=link_to "Carriers",carriers_path,class:"nav-link py-3 px-0 px-lg-3 rounded "%></li>
+                            <li class="nav-item mx-0 mx-lg-1"> <%=link_to "Kaderes", kaderes_path,class:"nav-link py-3 px-0 px-lg-3 rounded "%></li>
+                            <li class="nav-item mx-0 mx-lg-1"> <%=link_to "Loads", loads_path,class:"nav-link py-3 px-0 px-lg-3 rounded "%></li>
+                        
+
+                            <li class="nav-item mx-0 mx-lg-1"> <%=link_to "Log Out", destroy_user_session_path,method: :delete,class:"nav-link py-3 px-0 px-lg-3 rounded "%></li>
+                                <%if current_page?(root_path) %>
+                                         <li class="nav-item mx-0 mx-lg-1"> <%=link_to "Edit Profile", edit_user_registration_path,class:"nav-link py-3 px-0 px-lg-3 rounded "%></li>
+                                 <%end%>        
+
+                        <%else%>
+                            <li class="nav-item mx-0 mx-lg-1"> <%=link_to "Login", new_user_session_path,class:"nav-link py-3 px-0 px-lg-3 rounded "%></li>
+                            <li class="nav-item mx-0 mx-lg-1"> <%=link_to "Sign Up", new_user_registration_path,class:"nav-link py-3 px-0 px-lg-3 rounded "%></li>
+                        <%end%>    
+
+                       <li class="nav-item mx-0 mx-lg-1"> <%=link_to "About", home_about_path,class:"nav-link py-3 px-0 px-lg-3 rounded "%></li>
+
+                    </ul>
+                </div>
+                <!--%= form_tag("/search", method: "get") do %>
+                <%= label_tag("Search for:") %>
+                <%= text_field_tag(:search,params[:search]) %>
+                <%= submit_tag("Search",:name=> nil) %>
+                    // form end code here -->
+              
+
+           </div>
+    
+</nav>

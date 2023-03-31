@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @kadere %>
+
+<div>
+  <%= link_to "Edit this kadere", edit_kadere_path(@kadere) %> |
+  <%= link_to "Back to kaderes", kaderes_path %>
+
+  <%= button_to "Destroy this kadere", @kadere, method: :delete %>
+</div>

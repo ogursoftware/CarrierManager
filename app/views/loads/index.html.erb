@@ -1,0 +1,52 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Loads</h1>
+
+
+
+
+
+<table class="table-dark table table-striped table-bordered table-hover">
+  <thead class ="thead-dark">
+     <tr>
+      <th>Load #</th>
+      <th>Kadere</th>
+      <th>Pickup City</th>
+      <th>Delivery City</th>
+      <th>Broker</th>
+      <th>Rate</th>
+      <th>Pickup Date </th>
+      <th>Delivery Date </th>
+      <th>Rate Confirmation </th>
+      <th colspan="2"></th>
+    </tr>
+  
+  </thead>
+  <tbody>
+    <% @loads.each do |load| %>
+    <tr>
+    <td><%=load.load_number %></td>
+    <td><%=load&.kadere&.name %></td>
+    <td><%=load.pickup_city %></td>
+    <td><%=load.delivery_city %></td>
+    <td><%=load.broker %></td>
+    <td><%=load.rate%></td>
+    <td><%=load.pickup_date%></td>
+    <td><%=load.delivery_date%></td>
+    <td><%=load.rate_confirmation.filename.to_s %></td>
+    <td> <%= link_to "Show this Load", load %> </td>
+
+   </tr>
+  <% end %>
+
+  </tbody>
+</table>
+
+
+
+
+<br>
+
+<%= link_to "New Load", new_load_path, class:"btn btn-dark" %>
+<p>
+ 

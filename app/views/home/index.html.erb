@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="Ogur Software" />
+        <title>My App </title>
+
+    </head> 
+    <body>
+
+
+<%if user_signed_in?%>
+<br>
+<h1>Home</h1>
+<br>
+<br>
+
+<div class="container text-center">
+  <div class="row row-cols-auto">
+    <div class="col"><li> 
+      <%= link_to "Carriers",carriers_path%></li></div>
+    <div class="col"><li><%= link_to "Kaderes",kaderes_path%></li></div>
+    <div class="col"><li><%= link_to "Loads",loads_path%></li></div>
+    <div class="col">Column</div>
+  </div>
+</div>
+
+
+
+<%else%>
+<br>
+<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+  <div><%= f.label :email %><br />
+  <%= f.email_field :email, :autofocus => true %></div>
+
+  <div><%= f.label :password %><br />
+  <%= f.password_field :password %></div>
+
+  <% if devise_mapping.rememberable? -%>
+    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+  <% end -%>
+
+  <div><%= f.submit "Login" %></div>
+<% end %>
+
+<%= render "devise/shared/links" %>
+
+<%end%> 
+
+</body>

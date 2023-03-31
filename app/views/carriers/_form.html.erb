@@ -1,0 +1,50 @@
+<%= form_with(model: carrier) do |form| %>
+  <% if carrier.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(carrier.errors.count, "error") %> prohibited this carrier from being saved:</h2>
+
+      <ul>
+        <% carrier.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+
+
+  <div class="form-group">
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name ,class:"form-control",placeholder:"Name" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :mc_number, style: "display: block" %>
+    <%= form.number_field :mc_number ,class:"form-control",placeholder:"MC Number"%>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :dot_number, style: "display: block" %>
+    <%= form.number_field :dot_number ,class:"form-control",placeholder:"DOT Number" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :address, style: "display: block" %>
+    <%= form.text_field :address ,class:"form-control",placeholder:"Address"%>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :main_contact, style: "display: block" %>
+    <%= form.text_field :main_contact ,class:"form-control",placeholder:"Main Contact"%>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :contact_number, style: "display: block" %>
+    <%= form.number_field :contact_number ,class:"form-control",placeholder:"Contact Number" %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

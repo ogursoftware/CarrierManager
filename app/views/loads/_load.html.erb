@@ -1,0 +1,50 @@
+<div id="<%= dom_id load %>">
+ <div class="jumbotron">
+
+    <h1>Load Number:</h1> <h1> <%= load.load_number %> <h1>
+    
+  </p>
+
+
+  </div>
+  <p>
+    <strong>Kadere:</strong>
+    <%= load.kadere.name if load.kadere%>
+  </p>
+
+  <p>
+    <strong>Pickup City:</strong>
+    <%= load.pickup_city %>
+  </p>
+
+  <p>
+    <strong>Delivery City:</strong>
+    <%= load.delivery_city %>
+  </p>
+
+  <p>
+    <strong>Broker:</strong>
+    <%= load.broker %>
+  </p>
+
+  <p>
+    <strong>Rate:</strong>
+    <%= load.rate %>
+  </p>
+
+  <p>
+    <strong>Pickup Date:</strong>
+    <%= load.pickup_date %>
+  </p>
+
+  <p>
+    <strong>Delivery Date:</strong>
+    <%= load.delivery_date %>
+  </p>
+
+  <p>
+    <strong>Rate Confirmation:</strong>
+    <%= load.rate_confirmation.filename.to_s %>
+  </p>
+
+</div>

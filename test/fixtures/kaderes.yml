@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  phone: 1
+  email: MyString
+  truck_number: 1
+  trailer_number: 1
+  carrier_company: MyString
+
+two:
+  name: MyString
+  phone: 1
+  email: MyString
+  truck_number: 1
+  trailer_number: 1
+  carrier_company: MyString

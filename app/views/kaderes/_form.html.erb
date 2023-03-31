@@ -1,0 +1,52 @@
+<%= form_with(model: kadere) do |form| %>
+  <% if kadere.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(kadere.errors.count, "error") %> prohibited this kadere from being saved:</h2>
+
+      <ul>
+        <% kadere.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  
+
+  <div class="form-group">
+    <br>
+    <%= form.text_field :name ,class:"form-control",placeholder:"Name" %>
+  </div>
+
+  <div class="form-group">
+    <br>
+    <%= form.number_field :phone ,class:"form-control",placeholder:"Phone Number"%>
+  </div>
+
+  <div class="form-group">
+    <br>
+    <%= form.text_field :email ,class:"form-control",placeholder:"Email"%>
+  </div>
+
+  <div class="form-group">
+    <br>
+    <%= form.number_field :truck_number,class:"form-control",placeholder:"Truck Number"%>
+  </div>
+
+  <div class="form-group">
+    <br>
+    <%= form.number_field :trailer_number ,class:"form-control",placeholder:"Trailer Number"%>
+  </div>
+
+  <br>
+ 
+  <br>
+  <select name="kadere[carrier_id]">
+    <% Carrier.all.each do |carrier| %>
+        <option value="<%= carrier.id %>"><%= carrier.name %></option>
+    <% end %>
+  </select>
+  
+ <%= form.submit %>
+  </div>
+<% end %>
