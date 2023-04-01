@@ -5,7 +5,7 @@
 <%= search_form_for @q do|f| %>
 <%= f.label "Search Carrier" %>
 
-<%= f.search_field :name_or_address_or_main_contact_cont %>
+<%= f.search_field :name_or_address_or_main_contact_or_mc_number%>
 
 <%= f.submit  %>
 
@@ -18,7 +18,7 @@
 <table class="table-dark table table-striped table-bordered table-hover">
   <thead class ="thead-dark">
      <tr>
-      <th>ID</th>
+      
       <th>Name</th>
       <th>Mc Number</th>
       <th>DOT Number</th>
@@ -32,7 +32,6 @@
   <tbody>
     <% @carriers.each do |carrier| %>
     <tr>
-    <td><%carrier.id%></td>
     <td><%=carrier.name %></td>
     <td><%=carrier.mc_number %></td>
     <td><%=carrier.dot_number %></td>

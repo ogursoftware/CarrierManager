@@ -38,15 +38,17 @@
     <%= form.number_field :trailer_number ,class:"form-control",placeholder:"Trailer Number"%>
   </div>
 
-  <br>
- 
-  <br>
-  <select name="kadere[carrier_id]">
+ <div>
+  <br>  
+  <select class="form-control", name="kadere[carrier_id]">
     <% Carrier.all.each do |carrier| %>
         <option value="<%= carrier.id %>"><%= carrier.name %></option>
     <% end %>
   </select>
-  
- <%= form.submit %>
+  </div>
+
+  <div>
+  <br>
+     <button type="submit" class="btn btn-dark">Create Kadere</button>
   </div>
 <% end %>

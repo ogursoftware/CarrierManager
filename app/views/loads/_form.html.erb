@@ -57,12 +57,15 @@
   <br>
  
   <br>
-  <select name="load[kadere_id]">
+  <select class="form-control",  name="load[kadere_id]">
     <% Kadere.all.each do |kadere| %>
         <option value="<%= kadere.id %>"><%= kadere.name %></option>
     <% end %>
   </select>
-  
- <%= form.submit %>
+
+ <div> 
+ <br>
+<button type="submit" class="btn btn-dark">Create Load</button>
+
   </div>
 <% end %>
