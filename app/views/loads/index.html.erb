@@ -3,7 +3,17 @@
 <h1>Loads</h1>
 
 
+<%= search_form_for @q do|f| %>
+<%= f.label "Search Loads" %>
 
+<%= f.search_field :pickup_city_or_broker %>
+
+<%= f.submit  %>
+
+<br>
+<br>
+
+<% end %> 
 
 
 <table class="table-dark table table-striped table-bordered table-hover">
