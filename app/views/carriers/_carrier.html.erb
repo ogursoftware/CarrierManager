@@ -2,16 +2,16 @@
 
 
 <div class="jumbotron">
-<h1> <%= carrier.name %>   </h1>
-<p class="lead">
+  <h1> <%= carrier.name %>   </h1>
+  <p class="lead">
 
       
       <%= carrier.address %>
          
 
 
-</p>
-<hr class ="my-4">
+  </p>
+  <hr class ="my-4">
 <p>
 
 
@@ -37,11 +37,6 @@
   <p>
     <strong>Contact number:</strong>
     <%= carrier.contact_number %>
-  </p>  
-
-
-  <%= link_to "Edit", edit_carrier_path(@carrier),class:"btn btn-secondary" %> 
-  <p>
-  <%= button_to "Delete this carrier", @carrier, method: :delete,class:"btn btn-secondary" %>
-  <p>
+  </p>    
+  
 </div>
