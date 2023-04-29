@@ -34,7 +34,7 @@ class LoadsController < ApplicationController
 
     respond_to do |format|
       if @load.save
-        format.html { redirect_to load_url(@load), notice: "load was successfully created." }
+        format.html { redirect_to load_url(@load), notice: "Load was successfully created." }
         format.json { render :show, status: :created, location: @load }
       else
         format.html { render :new, status: :unprocessable_entity }

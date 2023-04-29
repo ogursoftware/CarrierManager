@@ -24,5 +24,6 @@ test:
 
 production:
   <<: *default
-  database: db/production.sqlite3
-  database : carrier_mamnger_production
+  #database: db/production.sqlite3
+  #database : carrier_manager_production
+  url: <%= ENV['DATABASE_URL'] %>
