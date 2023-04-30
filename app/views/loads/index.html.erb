@@ -6,7 +6,7 @@
 <%= search_form_for @q do|f| %>
 <%= f.label "Search Loads" %>
 
-<%= f.search_field :pickup_city_or_broker %>
+<%= f.search_field :load_number_or_broker %>
 
 <%= f.submit  %>
 
@@ -44,7 +44,7 @@
     <td><%=load.rate%></td>
     <td><%=load.pickup_date%></td>
     <td><%=load.delivery_date%></td>
-    <td><%=load.rate_confirmation.filename.to_s %></td>
+    <td><%=link_to "View Document", load.rate_confirmation.url, download: true %></td>
     <td><%=load.status%></td>
     <td> <%= link_to "Show this Load", load %> </td>
 

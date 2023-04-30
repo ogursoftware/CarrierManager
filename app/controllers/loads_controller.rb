@@ -78,6 +78,6 @@ class LoadsController < ApplicationController
     def load_params
   
     
-    params.require(:load).permit(:load_number, :pickup_city, :delivery_city, :broker, :rate, :pickup_date , :delivery_date ,:rate_confirmation, :kadere_id,:status  )
+    params.require(:load).permit(:load_number, :pickup_city, :delivery_city, :broker, :rate, :pickup_date , :delivery_date ,:rate_confirmation, :kadere_id,:status)
     end
 end
