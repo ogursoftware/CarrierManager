@@ -3,8 +3,8 @@
 <%= render @kadere %>
 
 <div>
-  <%= link_to "Edit this kadere", edit_kadere_path(@kadere) %> |
-  <%= link_to "Back to kaderes", kaderes_path %>
-
-  <%= button_to "Destroy this kadere", @kadere, method: :delete %>
+  <%= link_to "Edit this kadere", edit_kadere_path(@kadere),  class:"btn btn-dark" %> |
+  <%= link_to "Back to kaderes", kaderes_path, class:"btn btn-dark" %>
+<p>
+  <%= button_to "Destroy this kadere", @kadere, method: :delete, class:"btn btn-danger" %>
 </div>

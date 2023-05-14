@@ -1,0 +1,18 @@
+databases:
+  - name: carrier_manager
+    databaseName: carrier_manager
+    user: carrier_manager
+
+services:
+  - type: web
+    name: carrier_manager
+    env: ruby
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: carrier_manager
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false

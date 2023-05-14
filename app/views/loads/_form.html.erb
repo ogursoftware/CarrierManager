@@ -11,11 +11,11 @@
     </div>
   <% end %>
 
-  
+  <div class="form-row">
 
   <div class="form-group">
     <br>
-    <%= form.number_field :load_number ,class:"form-control",placeholder:"Load Number" %>
+    <%= form.text_field :load_number ,class:"form-control",placeholder:"Load Number" %>
   </div>
 
   <div>
@@ -40,14 +40,13 @@
   <div class="form-group">
     <br>
     <%= form.text_field :broker,class:"form-control",placeholder:"Broker"%>
+    <br>
   </div>
 
-  <div class="form-group">
-    <br>
-    <div class="input-group-prepend">
-    <span class="input-group-text">$</span>  
-  </div>
-    <%= form.number_field :rate ,class:"form-control",placeholder:"Rate"%>
+  <div class="input-group mb-3">
+   
+    <span class="input-group-text">$</span>
+     <%= form.number_field :rate ,class:"form-control",placeholder:"Rate"%>
      
   </div>
 
@@ -67,28 +66,19 @@
   </div>
 
   
-
-  <br>
- 
-  <br>
-  <select class="form-control",  name="load[kadere_id]">
-    <% Kadere.all.each do |kadere| %>
-        <option value="<%= kadere.id %>"><%= kadere.name %></option>
-    <% end %>
-  </select>
-
   
 
   <div class="form-group">
     <br>
-    <%= form.label :status ,class:"form-control",placeholder:"Status"%>
-        <%= form.select :status, options_for_select(Load.statuses.map {|key, value| [key.titleize, Load.statuses.key(value)]}, @load.status) %>
+    <%= form.label :status%>
+        <%= form.select :status, options_for_select(Load.statuses.map {|key, value| [key.titleize, Load.statuses.key(value)]}, @load.status),class:"form-control" %>
 
 
 
  <div> 
  <br>
-<button type="submit" class="btn btn-dark">Create Load</button>
+<button type="submit" class="btn btn-success">Create Load</button> |  <%= link_to "Back to loads", loads_path,class:"btn btn-dark" %>
+
 
   </div>
 <% end %>
