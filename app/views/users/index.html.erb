@@ -1,0 +1,41 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Users Dashboard</h1>
+
+
+
+
+<% if current_user&.role =="admin"%>
+
+<table class="table-dark table table-striped table-bordered table-hover">
+  <thead class ="thead-dark">
+     <tr>
+      <th>User Email #</th>
+      <th>Role</th>
+      <th></th>
+      
+      <th colspan="2"></th>
+    </tr>
+  
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+    <tr>
+    <td><%=user.email %></td>
+    <td><%=user.role %></td>
+    <td><%= %></td>
+    
+    <td> <%=link_to "Edit Profile", edit_user_registration_path %> </td>
+
+   </tr>
+  <% end %>
+
+  </tbody>
+</table>
+ <%= link_to "Add New User",new_user_registration_path, class:"btn btn-dark" %>
+
+<%else%>
+<p> Admin Access Only </p>
+<%=link_to "Home",root_path %>
+<%end%>
+

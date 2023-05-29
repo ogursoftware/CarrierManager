@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  get 'users/new'
+  get 'users/create'
+  get 'users/update'
+  
+  get 'users/destroy'
+  get 'users/index'
+  get 'users/show'
   get 'loads/index'
   devise_for :users
 
@@ -8,6 +15,7 @@ Rails.application.routes.draw do
   resources :kaderes
   resources :carriers
   resources :loads
+  resources :users
   get 'home/index'
   get 'home/index2'
   get 'home/about'

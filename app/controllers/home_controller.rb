@@ -1,6 +1,8 @@
 class HomeController < ApplicationController
+
+  before_action :authorize_admin
   def index
-    
+   
   end
     
   def index2
@@ -15,16 +17,11 @@ class HomeController < ApplicationController
 
   end
 
-  def search
-    if params[:search].blank?
-      redirect_to carriers_path and return
-    else
-      @parameter =params[:search].downcase
-      @carrier_results = Carrier.where('name LIKE?',"%#{parameter}%")
-      @kadere_results = Kaderes.all.where('name LIKE?',"%#{parameter}%")
-    
+  def authorize_admin
+    if current_user&.admin?
+     
     end
-  end 
+  end  
   
     
 end
